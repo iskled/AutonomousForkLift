@@ -14,34 +14,35 @@ namespace status_led {
     /**
      * @brief Initializes the status LED.
      * 
-     * This function sets up the necessary hardware configurations
-     * for the status LED, such as configuring the GPIO pin as output.
+     * Configures the necessary hardware and ensures the LED is set to a known state.
      */
     void init();
 
     /**
-     * @brief Turns the status LED on.
-     * 
-     * Sets the corresponding GPIO pin to a high state,
-     * turning the LED on.
+     * @brief Turns the LED on.
      */
     void on();
 
     /**
-     * @brief Turns the status LED off.
-     * 
-     * Sets the corresponding GPIO pin to a low state,
-     * turning the LED off.
+     * @brief Turns the LED off.
      */
     void off();
 
     /**
-     * @brief Blinks the status LED.
-     * 
-     * Toggles the LED state at a predefined interval,
-     * useful for indicating ongoing processes or errors.
+     * @brief Toggles the LED state.
+     */
+    void toggle();
+
+    /**
+     * @brief Blinks the LED at a default rate.
      */
     void blink();
+
+    /**
+     * @brief Blinks the LED with a custom interval.
+     * @param interval_ms Time in milliseconds between on/off transitions.
+     */
+    void blink_custom(int interval_ms);
 
 } // namespace status_led
 
